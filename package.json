@@ -1,6 +1,6 @@
 {
   "name": "traderiser",
-  "version": "1.0.0",
+  "version": "1.1.0-beta",
   "description": "TradeRiser - Modular crypto trading bot using Alpaca API with MA Crossover + TP/SL strategy",
   "main": "src/index.js",
   "type": "module",

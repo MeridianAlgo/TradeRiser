@@ -128,18 +128,26 @@ npm test
 1. **Commit all changes:**
    ```bash
    git add .
-   git commit -m "Rebrand to TradeRiser & fix CI/CD pipeline"
+   git commit -m "v1.1.0-beta: Rebrand to TradeRiser & fix CI/CD pipeline"
    ```
 
-2. **Push to GitHub:**
+2. **Create and push tag:**
    ```bash
+   git tag -a v1.1.0-beta -m "TradeRiser v1.1.0-beta - CI/CD fixes & rebranding"
    git push origin main
+   git push origin v1.1.0-beta
    ```
 
 3. **Verify CI/CD:**
    - Go to GitHub Actions tab
    - Watch the workflow run
    - All jobs should pass ✅
+
+4. **Create GitHub Release (Optional):**
+   - Go to Releases → Draft a new release
+   - Choose tag: v1.1.0-beta
+   - Title: "TradeRiser v1.1.0-beta"
+   - Description: See CHANGELOG.md
 
 ### For Repository Setup
 

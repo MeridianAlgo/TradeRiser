@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0-beta] - 2025-10-18
+
+### Changed
+- **Rebranded** from "crypto-trading-bot" to "TradeRiser"
+- **Fixed** CI/CD pipeline to work without package-lock.json
+- **Updated** all documentation with TradeRiser branding
+- **Improved** GitHub Actions workflow for better compatibility
+
+### Fixed
+- CI/CD pipeline `npm ci` error - now uses `npm install`
+- All repository URLs updated to TradeRiser
+- Package name updated to `traderiser`
+
+---
+
 ## [1.0.0] - 2025-10-17
 
 ### 🎉 Initial Release
