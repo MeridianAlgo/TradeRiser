@@ -9,7 +9,7 @@ This document explains the complete project structure and organization.
 ## 📂 Directory Structure
 
 ```
-crypto-trading-bot/
+TradeRiser/
 │
 ├── 📁 src/                          # Source code (main application)
 │   ├── index.js                     # Main entry point & bot orchestrator

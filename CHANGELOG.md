@@ -100,6 +100,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### From Source
 ```bash
+cd TradeRiser
 git pull origin main
 npm install
 npm test
@@ -131,8 +132,8 @@ Thank you to all contributors who helped make this project possible!
 
 For questions, issues, or feature requests:
 - 📖 Read the [documentation](docs/)
-- 🐛 [Report bugs](https://github.com/yourusername/crypto-trading-bot/issues)
-- 💡 [Request features](https://github.com/yourusername/crypto-trading-bot/issues)
+- 🐛 [Report bugs](https://github.com/yourusername/TradeRiser/issues)
+- 💡 [Request features](https://github.com/yourusername/TradeRiser/issues)
 - 🤝 [Contribute](CONTRIBUTING.md)
 
 ---

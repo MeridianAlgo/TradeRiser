@@ -1,7 +1,7 @@
 {
-  "name": "crypto-trading-bot",
+  "name": "traderiser",
   "version": "1.0.0",
-  "description": "Modular crypto trading bot using Alpaca API with MA Crossover + TP/SL strategy",
+  "description": "TradeRiser - Modular crypto trading bot using Alpaca API with MA Crossover + TP/SL strategy",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
@@ -24,10 +24,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/crypto-trading-bot.git"
+    "url": "https://github.com/yourusername/TradeRiser.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/crypto-trading-bot/issues"
+    "url": "https://github.com/yourusername/TradeRiser/issues"
   },
   "engines": {
     "node": ">=16.0.0"

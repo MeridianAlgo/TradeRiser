@@ -1,6 +1,6 @@
-# Contributing to Crypto Trading Bot
+# Contributing to TradeRiser
 
-First off, thank you for considering contributing to Crypto Trading Bot! 🎉
+First off, thank you for considering contributing to TradeRiser! 🎉
 
 ## Code of Conduct
 
@@ -41,8 +41,8 @@ Enhancement suggestions are tracked as GitHub issues. When creating an enhanceme
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/crypto-trading-bot.git
-   cd crypto-trading-bot
+   git clone https://github.com/yourusername/TradeRiser.git
+   cd TradeRiser
    ```
 
 2. **Install dependencies**
@@ -69,7 +69,7 @@ Enhancement suggestions are tracked as GitHub issues. When creating an enhanceme
 ## Project Structure
 
 ```
-crypto-trading-bot/
+TradeRiser/
 ├── src/              # Source code
 │   ├── index.js      # Main entry point
 │   ├── broker.js     # Alpaca API integration

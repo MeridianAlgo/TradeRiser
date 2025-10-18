@@ -1,11 +1,11 @@
-# 🤖 Crypto Trading Bot
+# 🚀 TradeRiser
 
-[![CI](https://github.com/yourusername/crypto-trading-bot/workflows/CI/badge.svg)](https://github.com/yourusername/crypto-trading-bot/actions)
-[![CodeQL](https://github.com/yourusername/crypto-trading-bot/workflows/CodeQL/badge.svg)](https://github.com/yourusername/crypto-trading-bot/security/code-scanning)
+[![CI](https://github.com/yourusername/TradeRiser/workflows/CI/badge.svg)](https://github.com/yourusername/TradeRiser/actions)
+[![CodeQL](https://github.com/yourusername/TradeRiser/workflows/CodeQL/badge.svg)](https://github.com/yourusername/TradeRiser/security/code-scanning)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node Version](https://img.shields.io/badge/node-%3E%3D16.0.0-brightgreen)](https://nodejs.org)
 
-A **modular** cryptocurrency trading bot that's easy to customize - even for non-coders!
+**TradeRiser** - A modular cryptocurrency trading bot that's easy to customize - even for non-coders!
 
 ✅ Uses **REAL LIVE PRICES** from Alpaca  
 ✅ **Paper trading** by default (safe testing)  
@@ -19,8 +19,8 @@ A **modular** cryptocurrency trading bot that's easy to customize - even for non
 
 ### 1. Clone & Install
 ```bash
-git clone https://github.com/yourusername/crypto-trading-bot.git
-cd crypto-trading-bot
+git clone https://github.com/yourusername/TradeRiser.git
+cd TradeRiser
 npm install
 ```
 
@@ -99,7 +99,7 @@ npm start
 ## 📁 Project Structure
 
 ```
-crypto-trading-bot/
+TradeRiser/
 ├── src/                    # Source code
 │   ├── index.js           # Main entry point
 │   ├── broker.js          # Alpaca API integration
@@ -360,7 +360,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 #### "Cannot find module" error
 ```bash
 # Make sure you're in the project root
-cd crypto-trading-bot
+cd TradeRiser
 
 # Reinstall dependencies
 rm -rf node_modules package-lock.json
@@ -400,9 +400,9 @@ cat .env
 ### Getting Help
 
 - 📖 Read the [documentation](docs/)
-- 🐛 Report bugs via [GitHub Issues](https://github.com/yourusername/crypto-trading-bot/issues)
-- 💡 Request features via [GitHub Issues](https://github.com/yourusername/crypto-trading-bot/issues)
-- 🤝 Contribute via [Pull Requests](https://github.com/yourusername/crypto-trading-bot/pulls)
+- 🐛 Report bugs via [GitHub Issues](https://github.com/yourusername/TradeRiser/issues)
+- 💡 Request features via [GitHub Issues](https://github.com/yourusername/TradeRiser/issues)
+- 🤝 Contribute via [Pull Requests](https://github.com/yourusername/TradeRiser/pulls)
 - 📧 Security issues: See [SECURITY.md](SECURITY.md)
 
 ---
@@ -415,10 +415,10 @@ If you find this project useful, please consider giving it a star! ⭐
 
 ## 📊 Stats
 
-![GitHub stars](https://img.shields.io/github/stars/yourusername/crypto-trading-bot?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/crypto-trading-bot?style=social)
-![GitHub issues](https://img.shields.io/github/issues/yourusername/crypto-trading-bot)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/yourusername/crypto-trading-bot)
+![GitHub stars](https://img.shields.io/github/stars/yourusername/TradeRiser?style=social)
+![GitHub forks](https://img.shields.io/github/forks/yourusername/TradeRiser?style=social)
+![GitHub issues](https://img.shields.io/github/issues/yourusername/TradeRiser)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/yourusername/TradeRiser)
 
 ---
 

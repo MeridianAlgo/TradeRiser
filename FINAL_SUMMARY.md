@@ -48,7 +48,7 @@
 ## 🗂️ Complete File Structure
 
 ```
-crypto-trading-bot/
+TradeRiser/
 │
 ├── 📁 src/                          # Source Code (6 files)
 │   ├── index.js                     # Main bot orchestrator
