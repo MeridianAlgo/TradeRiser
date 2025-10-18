@@ -453,4 +453,4 @@ If you find this project useful, please consider giving it a star! ⭐
 
 **Happy Trading! 🚀**
 
-Made with ❤️ by the community
+Made with ❤️ by MeridianAlgo for the community
