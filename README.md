@@ -28,7 +28,7 @@
 
 ### 1. Clone & Install
 ```bash
-git clone https://github.com/yourusername/TradeRiser.git
+git clone https://github.com/MeridianAlgo/TradeRiser.git
 cd TradeRiser
 npm install
 ```
@@ -429,9 +429,9 @@ cat .env
 ### Getting Help
 
 - 📖 Read the [documentation](docs/)
-- 🐛 Report bugs via [GitHub Issues](https://github.com/yourusername/TradeRiser/issues)
-- 💡 Request features via [GitHub Issues](https://github.com/yourusername/TradeRiser/issues)
-- 🤝 Contribute via [Pull Requests](https://github.com/yourusername/TradeRiser/pulls)
+- 🐛 Report bugs via [GitHub Issues](https://github.com/MeridianAlgo/TradeRiser/issues)
+- 💡 Request features via [GitHub Issues](https://github.com/MeridianAlgo/TradeRiser/issues)
+- 🤝 Contribute via [Pull Requests](https://github.com/MeridianAlgo/TradeRiser/pulls)
 - 📧 Security issues: See [SECURITY.md](SECURITY.md)
 
 ---
@@ -444,10 +444,10 @@ If you find this project useful, please consider giving it a star! ⭐
 
 ## 📊 Stats
 
-![GitHub stars](https://img.shields.io/github/stars/yourusername/TradeRiser?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/TradeRiser?style=social)
-![GitHub issues](https://img.shields.io/github/issues/yourusername/TradeRiser)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/yourusername/TradeRiser)
+![GitHub stars](https://img.shields.io/github/stars/MeridianAlgo/TradeRiser?style=social)
+![GitHub forks](https://img.shields.io/github/forks/MeridianAlgo/TradeRiser?style=social)
+![GitHub issues](https://img.shields.io/github/issues/MeridianAlgo/TradeRiser)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/MeridianAlgo/TradeRiser)
 
 ---
 
