@@ -1,0 +1,40 @@
+{
+  "name": "crypto-trading-bot",
+  "version": "1.0.0",
+  "description": "Modular crypto trading bot using Alpaca API with MA Crossover + TP/SL strategy",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node src/test.js",
+    "lint": "echo 'No linter configured'",
+    "format": "echo 'No formatter configured'"
+  },
+  "keywords": [
+    "crypto",
+    "trading",
+    "bot",
+    "alpaca",
+    "bitcoin",
+    "ethereum",
+    "automated-trading",
+    "algorithmic-trading"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/crypto-trading-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/crypto-trading-bot/issues"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "@alpacahq/alpaca-trade-api": "^3.0.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {}
+}

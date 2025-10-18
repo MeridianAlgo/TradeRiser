@@ -1,0 +1,108 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                   🤖 CRYPTO TRADING BOT - QUICK START 🤖                  ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+📋 WHAT YOU NEED:
+   ✅ Node.js installed
+   ✅ Alpaca account (free at alpaca.markets)
+   ✅ 5 minutes of your time
+
+═══════════════════════════════════════════════════════════════════════════
+
+🚀 SETUP (Do this once):
+
+   1. Install dependencies:
+      → npm install
+
+   2. Get API keys from alpaca.markets
+
+   3. Add keys to .env file:
+      ALPACA_API_KEY=your_key_here
+      ALPACA_API_SECRET=your_secret_here
+      ALPACA_PAPER=true
+
+   4. Test it works:
+      → npm test
+
+   5. Run the bot:
+      → npm start
+
+═══════════════════════════════════════════════════════════════════════════
+
+🎯 CUSTOMIZE YOUR STRATEGY:
+
+   📁 Open: strategy.js
+   
+   ✏️ Edit the analyze() function (line 60)
+   
+   💡 Or copy a ready-made strategy from STRATEGY_GUIDE.md
+
+═══════════════════════════════════════════════════════════════════════════
+
+📚 DOCUMENTATION:
+
+   📖 GETTING_STARTED.md  → Complete beginner's guide
+   📖 STRATEGY_GUIDE.md   → 5+ ready-to-use strategies
+   📖 README.md           → Quick reference
+   📖 SUMMARY.md          → Technical details
+
+═══════════════════════════════════════════════════════════════════════════
+
+🎨 EASY CUSTOMIZATION (No coding needed!):
+
+   Change numbers in strategy.js:
+   
+   this.shortWindow = 10;        ← Change to 5 for faster signals
+   this.longWindow = 30;         ← Change to 50 for slower signals
+   this.positionSizePercent = 0.1;  ← Change to 0.2 for bigger trades
+
+═══════════════════════════════════════════════════════════════════════════
+
+⚡ COMMANDS:
+
+   npm install    → Install dependencies (once)
+   npm test       → Test everything works
+   npm start      → Run the bot
+   Ctrl+C         → Stop the bot
+
+═══════════════════════════════════════════════════════════════════════════
+
+🛡️ SAFETY:
+
+   ✅ Paper trading by default (no real money)
+   ✅ Test thoroughly before going live
+   ✅ Never share your API keys
+   ✅ Start with small position sizes
+
+═══════════════════════════════════════════════════════════════════════════
+
+💡 READY-MADE STRATEGIES (Copy & Paste!):
+
+   1. Simple Price Threshold    → Buy at $X, sell at $Y
+   2. RSI Overbought/Oversold   → Buy low RSI, sell high RSI
+   3. Take Profit / Stop Loss   → Automatic profit taking
+   4. Buy the Dip               → Buy when price drops X%
+   5. Trend Following           → Follow the trend with EMAs
+
+   All in STRATEGY_GUIDE.md with full code!
+
+═══════════════════════════════════════════════════════════════════════════
+
+🎉 YOU'RE READY!
+
+   1. Run: npm start
+   2. Watch the console output
+   3. See your bot trade on alpaca.markets
+   4. Customize and improve!
+
+═══════════════════════════════════════════════════════════════════════════
+
+❓ NEED HELP?
+
+   → Read GETTING_STARTED.md for step-by-step instructions
+   → Read STRATEGY_GUIDE.md for strategy examples
+   → Check troubleshooting section in GETTING_STARTED.md
+
+═══════════════════════════════════════════════════════════════════════════
+
+Happy Trading! 🚀
