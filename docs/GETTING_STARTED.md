@@ -48,8 +48,8 @@ You should already have these files on your computer. If you see these files, yo
 4. Fill out the form and create your account
 5. Once logged in, go to "Your API Keys" section
 6. You'll see two things:
-   - **API Key ID** (looks like: `PKX1234567890ABCDEF`)
-   - **Secret Key** (looks like: `abc123def456ghi789jkl012mno345pqr678stu`)
+   - **API Key ID** (looks like: `AKXXXXXXXXXXXXXXXXXX`)
+   - **Secret Key** (looks like: `your_secret_key_here`)
 7. **Copy both** - you'll need them in the next step
 
 ### Step 4: Add Your API Keys
@@ -68,8 +68,8 @@ You should already have these files on your computer. If you see these files, yo
 
 **Example of what it should look like:**
 ```
-ALPACA_API_KEY=PKX1234567890ABCDEF
-ALPACA_API_SECRET=abc123def456ghi789jkl012mno345pqr678stu
+ALPACA_API_KEY=AKXXXXXXXXXXXXXXXXXX
+ALPACA_API_SECRET=your_secret_key_here
 ALPACA_PAPER=true
 ```
 

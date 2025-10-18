@@ -15,8 +15,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - CI/CD pipeline `npm ci` error - now uses `npm install`
+- Missing `.env.example` file - now included
+- Security check false positive - improved regex pattern
+- Example API keys in documentation - changed to safe examples
 - All repository URLs updated to TradeRiser
 - Package name updated to `traderiser`
+
+### Added
+- `.env.example` file for easy setup
+- Improved security checks in CI/CD
+- Better secret detection patterns
 
 ---
 

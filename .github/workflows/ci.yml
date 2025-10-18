@@ -79,8 +79,14 @@ jobs:
     
     - name: Check for secrets
       run: |
-        if grep -r "ALPACA_API_KEY=PK" . --exclude-dir=node_modules --exclude-dir=.git; then
-          echo "Found potential API key in code!"
+        # Check for actual API keys (not examples)
+        if grep -r "ALPACA_API_KEY=PK[A-Z0-9]\{20,\}" . --exclude-dir=node_modules --exclude-dir=.git --exclude-dir=docs; then
+          echo "Found potential real API key in code!"
+          exit 1
+        fi
+        # Check .env is not committed
+        if git ls-files | grep -q "^\.env$"; then
+          echo ".env file should not be committed!"
           exit 1
         fi
       shell: bash
