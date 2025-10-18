@@ -1,7 +1,4 @@
 # 🚀 TradeRiser
-
-[![CI](https://github.com/yourusername/TradeRiser/workflows/CI/badge.svg)](https://github.com/yourusername/TradeRiser/actions)
-[![CodeQL](https://github.com/yourusername/TradeRiser/workflows/CodeQL/badge.svg)](https://github.com/yourusername/TradeRiser/security/code-scanning)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node Version](https://img.shields.io/badge/node-%3E%3D16.0.0-brightgreen)](https://nodejs.org)
 
@@ -12,6 +9,18 @@
 ✅ **Comprehensive error handling**  
 ✅ **Easy strategy customization** - just edit one file!  
 ✅ **One position at a time** - no duplicate buys!
+
+---
+
+## 📖 Quick Links
+
+- 🚀 **[Quick Start Guide](docs/GETTING_STARTED.md)** - Get started in 5 minutes
+- 📊 **[Strategy Guide](docs/STRATEGY_GUIDE.md)** - 5+ ready-to-use strategies
+- 🔧 **[Deployment Guide](docs/DEPLOYMENT.md)** - Deploy to production
+- 📚 **[Full Documentation](docs/START_HERE.md)** - Complete documentation index
+- 🤝 **[Contributing](CONTRIBUTING.md)** - How to contribute
+- 🔒 **[Security Policy](SECURITY.md)** - Security guidelines
+- 📝 **[Changelog](CHANGELOG.md)** - Version history
 
 ---
 
@@ -215,12 +224,32 @@ npm start
 
 ## 📚 Documentation
 
-- **[START_HERE.md](docs/START_HERE.md)** - Choose your learning path
-- **[GETTING_STARTED.md](docs/GETTING_STARTED.md)** - Complete setup guide
-- **[STRATEGY_EXPLAINED.md](docs/STRATEGY_EXPLAINED.md)** - How the strategy works
-- **[STRATEGY_GUIDE.md](docs/STRATEGY_GUIDE.md)** - 5+ ready-to-use strategies
-- **[INDICATORS_GUIDE.md](docs/INDICATORS_GUIDE.md)** - All indicators explained
+### 🎯 Getting Started
+- **[START_HERE.md](docs/START_HERE.md)** ⭐ - Main entry point, choose your path
+- **[GETTING_STARTED.md](docs/GETTING_STARTED.md)** - Complete beginner's setup guide
+- **[QUICK_START.txt](docs/QUICK_START.txt)** - Visual quick reference card
+
+### 📊 Strategy & Trading
+- **[STRATEGY_EXPLAINED.md](docs/STRATEGY_EXPLAINED.md)** - How the current strategy works
+- **[STRATEGY_GUIDE.md](docs/STRATEGY_GUIDE.md)** - 5+ ready-to-use strategy examples
+- **[INDICATORS_GUIDE.md](docs/INDICATORS_GUIDE.md)** - All 6 indicators explained
+
+### 🔧 Technical Documentation
+- **[DIRECTORY_STRUCTURE.md](docs/DIRECTORY_STRUCTURE.md)** - Clean directory layout
+- **[FILES_OVERVIEW.md](docs/FILES_OVERVIEW.md)** - What each file does
+- **[PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md)** - Complete project structure
+- **[SUMMARY.md](docs/SUMMARY.md)** - Technical details & test results
+
+### 🚀 Deployment & Updates
+- **[DEPLOYMENT.md](docs/DEPLOYMENT.md)** - Complete deployment guide
+- **[DEPLOY_NOW.txt](docs/DEPLOY_NOW.txt)** - Quick deploy commands
+- **[WHATS_NEW.md](docs/WHATS_NEW.md)** - Latest updates & changes
 - **[FIXES_AND_IMPROVEMENTS.md](docs/FIXES_AND_IMPROVEMENTS.md)** - What's been fixed
+- **[CI_FIXES_v2.md](docs/CI_FIXES_v2.md)** - CI/CD fixes documentation
+
+### 📖 Complete Index
+- **[DOCUMENTATION_INDEX.md](docs/DOCUMENTATION_INDEX.md)** - Complete documentation index
+- **[FINAL_SUMMARY.md](docs/FINAL_SUMMARY.md)** - Comprehensive project summary
 
 ---
 
