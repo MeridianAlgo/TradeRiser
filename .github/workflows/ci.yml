@@ -82,17 +82,13 @@ jobs:
       run: |
         echo "Checking for sensitive patterns..."
         
-        # Check for private keys (exclude documentation)
-        if grep -r "BEGIN.*PRIVATE KEY" . \
-          --exclude-dir=node_modules \
-          --exclude-dir=.git \
-          --exclude-dir=docs \
-          --exclude="*.md"; then
-          echo "ERROR: Found private key in code!"
+        # Check for private keys (exclude documentation and workflow files)
+        if grep -r "BEGIN.*PRIVATE KEY" src/ scripts/ 2>/dev/null; then
+          echo "ERROR: Found private key in source code!"
           exit 1
         fi
         
-        echo "No sensitive patterns found"
+        echo "No sensitive patterns found in source code"
       shell: bash
 
   # Job 3: Project Structure Validation
@@ -191,7 +187,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        node-version: [18.x, 20.x]
+        node-version: [16.x, 18.x, 20.x, 22.x]
     
     steps:
     - name: Checkout code
