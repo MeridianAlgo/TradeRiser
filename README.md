@@ -3,7 +3,7 @@
 [![CI/CD Pipeline](https://github.com/yourusername/TradeRiser/workflows/CI/CD%20Pipeline/badge.svg)](https://github.com/yourusername/TradeRiser/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org)
-[![Version](https://img.shields.io/badge/version-1.3.5-blue.svg)](https://github.com/yourusername/TradeRiser/releases)
+[![Version](https://img.shields.io/badge/version-1.3.6-blue.svg)](https://github.com/yourusername/TradeRiser/releases)
 
 **TradeRiser v1.3.0** - A modular cryptocurrency trading bot using Alpaca API with MA Crossover + TP/SL strategy.
 
