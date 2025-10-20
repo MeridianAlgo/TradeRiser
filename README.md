@@ -1,456 +1,232 @@
-# 🚀 TradeRiser
+# TradeRiser
+
+[![CI/CD Pipeline](https://github.com/yourusername/TradeRiser/workflows/CI/CD%20Pipeline/badge.svg)](https://github.com/yourusername/TradeRiser/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node Version](https://img.shields.io/badge/node-%3E%3D16.0.0-brightgreen)](https://nodejs.org)
+[![Node Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org)
+[![Version](https://img.shields.io/badge/version-1.3.2-blue.svg)](https://github.com/yourusername/TradeRiser/releases)
 
-**TradeRiser** - A modular cryptocurrency trading bot that's easy to customize - even for non-coders!
+**TradeRiser v1.3.0** - A modular cryptocurrency trading bot using Alpaca API with MA Crossover + TP/SL strategy.
 
-✅ Uses **REAL LIVE PRICES** from Alpaca  
-✅ **Paper trading** by default (safe testing)  
-✅ **Comprehensive error handling**  
-✅ **Easy strategy customization** - just edit one file!  
-✅ **One position at a time** - no duplicate buys!
+**NEW in v1.3.0:** Single symbol trading, initialization period, and global variables for easy customization!
 
----
+## Features
 
-## 📖 Quick Links
+### 🎯 v1.3.0 New Features
+- ✅ **Single symbol trading** - Trade one asset at a time (BTC/USD, ETH/USD, AAPL, etc.)
+- ✅ **Initialization period** - Collects data before trading (prevents false signals)
+- ✅ **Global variables** - Access market data anywhere in your code
+- ✅ **Easy configuration** - Change symbol via .env file
+- ✅ **True crossover detection** - Only buys on actual MA crossovers
 
-- 🚀 **[Quick Start Guide](docs/GETTING_STARTED.md)** - Get started in 5 minutes
-- 📊 **[Strategy Guide](docs/STRATEGY_GUIDE.md)** - 5+ ready-to-use strategies
-- 🔧 **[Deployment Guide](docs/DEPLOYMENT.md)** - Deploy to production
-- 📚 **[Full Documentation](docs/START_HERE.md)** - Complete documentation index
-- 🤝 **[Contributing](CONTRIBUTING.md)** - How to contribute
-- 🔒 **[Security Policy](SECURITY.md)** - Security guidelines
-- 📝 **[Changelog](CHANGELOG.md)** - Version history
+### Core Features
+- ✅ Real-time price data from Alpaca API
+- ✅ Paper trading by default (safe testing)
+- ✅ One position at a time (prevents multiple buys)
+- ✅ Automatic Take Profit (3%) and Stop Loss (1.5%)
+- ✅ 6 built-in technical indicators (SMA, EMA, RSI, MACD, Bollinger Bands, ATR)
+- ✅ **Automatic dependency detection** - Bot tells you what to install!
+- ✅ **Auto-install missing packages** - One command to install everything
+- ✅ Comprehensive error handling
+- ✅ Easy to customize - 5+ pre-built strategies included
+- ✅ Support for external libraries (50+ indicators available)
+- ✅ Complete documentation with examples
+- ✅ WebSocket support ready (real-time data)
 
----
+## Quick Start
 
-## 🚀 Quick Start (5 Minutes!)
+📋 **[Quick Reference Card](QUICK_REFERENCE.md)** - Essential commands and links
 
-### 1. Clone & Install
+### Installation
+
 ```bash
-git clone https://github.com/MeridianAlgo/TradeRiser.git
+git clone https://github.com/yourusername/TradeRiser.git
 cd TradeRiser
 npm install
 ```
 
-### 2. Configure API Keys
-```bash
-# Copy the example environment file
-cp .env.example .env
+### Configuration
 
-# Edit .env and add your Alpaca API keys
-# Get free keys at: https://alpaca.markets
+1. Copy the example environment file:
+```bash
+cp .env.example .env
 ```
 
-Your `.env` file should look like:
+2. Edit `.env` and add your Alpaca API keys:
 ```env
 ALPACA_API_KEY=your_key_here
 ALPACA_API_SECRET=your_secret_here
 ALPACA_PAPER=true
+
+# Choose what to trade (change this!)
+TRADING_SYMBOL=BTC/USD
 ```
 
-### 3. Test Everything
+**Supported symbols:**
+- Crypto: `BTC/USD`, `ETH/USD`, `LTC/USD`, `DOGE/USD`, `SOL/USD`
+- Stocks: `AAPL`, `TSLA`, `GOOGL`, `MSFT`, `AMZN`
+
+Get free API keys at: https://alpaca.markets
+
+### Testing
+
 ```bash
 npm test
 ```
 
-### 4. Run the Bot!
+### Running
+
 ```bash
 npm start
 ```
 
-### 5. Customize Your Strategy
-```bash
-# Open src/strategy.js in your editor
-# Change lines 40-41 for TP/SL
-# Change lines 35-36 for MA periods
-```
+## Strategy
 
----
+**MA Crossover + Take Profit/Stop Loss (v1.3.0)**
 
-## 📊 Current Strategy
-
-**MA Crossover + Take Profit/Stop Loss**
-
-- **Entry:** Buy when Short MA (10) crosses above Long MA (30)
+- **Initialization:** Collects 2 data points before trading (prevents false signals)
+- **Entry:** Buy when 10-period MA crosses above 30-period MA (actual crossover, not just "above")
 - **Exit:** Sell at Take Profit (3%) OR Stop Loss (1.5%)
-- **Position:** ONE at a time per symbol (no duplicate buys!)
-- **Risk Management:** Built-in TP/SL for every trade
+- **Position:** One at a time (single symbol trading)
+- **Symbol:** Configurable via .env file (default: BTC/USD)
 
----
+## Customization
 
-## 🎯 Features
+### Change Take Profit / Stop Loss
 
-### Core Features
-- ✅ Real-time price data from Alpaca API
-- ✅ Paper trading by default (safe!)
-- ✅ One position at a time per symbol
-- ✅ Automatic Take Profit & Stop Loss
-- ✅ Comprehensive error handling
-- ✅ Easy to customize
+Edit `src/strategy.js` lines 40-41:
 
-### Available Indicators
-- ✅ SMA (Simple Moving Average)
-- ✅ EMA (Exponential Moving Average)
-- ✅ RSI (Relative Strength Index)
-- ✅ MACD (Moving Average Convergence Divergence)
-- ✅ Bollinger Bands
-- ✅ ATR (Average True Range)
-- ✅ Volume Filter
-
-### Optional Filters
-- 📊 RSI Filter (prevents overbought entries)
-- 📊 Volume Filter (only buys on high volume)
-- 📊 EMA Option (faster than SMA)
-
----
-
-## 📁 Project Structure
-
-```
-TradeRiser/
-├── src/                    # Source code
-│   ├── index.js           # Main entry point
-│   ├── broker.js          # Alpaca API integration
-│   ├── portfolio.js       # Portfolio management
-│   ├── strategy.js        # Trading strategy ⭐ CUSTOMIZE THIS!
-│   ├── config.js          # Configuration
-│   └── test.js            # Test suite
-├── docs/                   # Documentation
-│   ├── START_HERE.md      # Main entry point
-│   ├── GETTING_STARTED.md # Complete beginner guide
-│   ├── STRATEGY_GUIDE.md  # Strategy examples
-│   ├── INDICATORS_GUIDE.md # All indicators explained
-│   └── ...                # More guides
-├── .github/                # GitHub workflows & templates
-├── .env.example            # Environment variables template
-├── .gitignore             # Git ignore rules
-├── package.json           # Dependencies
-├── LICENSE                # MIT License
-├── CONTRIBUTING.md        # Contribution guidelines
-├── SECURITY.md            # Security policy
-└── README.md              # This file
-```
-
----
-
-## 🎨 Easy Customization
-
-### Quick Edits (No Coding Required!)
-
-#### 1. Change Take Profit / Stop Loss
-```bash
-# Open src/strategy.js
-# Find lines 40-41
-```
 ```javascript
-this.takeProfitPercent = 3.0;   // Change to 5.0 for 5% profit
-this.stopLossPercent = 1.5;     // Change to 2.0 for 2% stop loss
+this.takeProfitPercent = 3.0;   // Change to 5.0 for 5%
+this.stopLossPercent = 1.5;     // Change to 2.0 for 2%
 ```
 
-#### 2. Change Moving Average Periods
-```bash
-# Open src/strategy.js
-# Find lines 35-36
-```
+### Change Moving Average Periods
+
+Edit `src/strategy.js` lines 35-36:
+
 ```javascript
 this.shortWindow = 10;  // Change to 5 for faster signals
 this.longWindow = 30;   // Change to 50 for slower signals
 ```
 
-#### 3. Change Position Size
-```bash
-# Open src/strategy.js
-# Find line 63
-```
+### Enable Additional Filters
+
+Edit `src/strategy.js`:
+
 ```javascript
-this.positionSizePercent = 0.1;  // 0.1 = 10%, 0.2 = 20%, etc.
+this.useRSI = true;      // Line 52 - RSI filter
+this.useVolume = true;   // Line 57 - Volume filter
+this.useEMA = true;      // Line 60 - Use EMA instead of SMA
 ```
 
-#### 4. Change Trading Symbols
-```bash
-# Open src/config.js
-# Find line 13
-```
-```javascript
-symbols: ['BTC/USD', 'ETH/USD', 'LTC/USD']  // Add or remove
-```
+### Change Trading Symbol
 
-#### 5. Change Check Interval
-```bash
-# Open src/config.js
-# Find line 14
-```
-```javascript
-checkInterval: 60000  // 60000 = 1 minute, 30000 = 30 seconds
+**Method 1: Environment Variable (Recommended)**
+
+Edit `.env` file:
+```env
+TRADING_SYMBOL=ETH/USD
 ```
 
-### Advanced Customization
+**Method 2: Direct in config**
 
-#### Enable RSI Filter
-```bash
-# Open src/strategy.js, line 52
-```
-```javascript
-this.useRSI = true;  // Prevents buying when overbought
-```
-
-#### Enable Volume Filter
-```bash
-# Open src/strategy.js, line 57
-```
-```javascript
-this.useVolume = true;  // Only buys on high volume
-```
-
-#### Use EMA Instead of SMA
-```bash
-# Open src/strategy.js, line 60
-```
-```javascript
-this.useEMA = true;  // Faster signals than SMA
-```
-
-### After Making Changes
-```bash
-# Always test after changes
-npm test
-
-# Then restart the bot
-npm start
-```
-
----
-
-## 📚 Documentation
-
-### 🎯 Getting Started
-- **[START_HERE.md](docs/START_HERE.md)** ⭐ - Main entry point, choose your path
-- **[GETTING_STARTED.md](docs/GETTING_STARTED.md)** - Complete beginner's setup guide
-- **[QUICK_START.txt](docs/QUICK_START.txt)** - Visual quick reference card
-
-### 📊 Strategy & Trading
-- **[STRATEGY_EXPLAINED.md](docs/STRATEGY_EXPLAINED.md)** - How the current strategy works
-- **[STRATEGY_GUIDE.md](docs/STRATEGY_GUIDE.md)** - 5+ ready-to-use strategy examples
-- **[INDICATORS_GUIDE.md](docs/INDICATORS_GUIDE.md)** - All 6 indicators explained
-
-### 🔧 Technical Documentation
-- **[DIRECTORY_STRUCTURE.md](docs/DIRECTORY_STRUCTURE.md)** - Clean directory layout
-- **[FILES_OVERVIEW.md](docs/FILES_OVERVIEW.md)** - What each file does
-- **[PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md)** - Complete project structure
-- **[SUMMARY.md](docs/SUMMARY.md)** - Technical details & test results
-
-### 🚀 Deployment & Updates
-- **[DEPLOYMENT.md](docs/DEPLOYMENT.md)** - Complete deployment guide
-- **[DEPLOY_NOW.txt](docs/DEPLOY_NOW.txt)** - Quick deploy commands
-- **[WHATS_NEW.md](docs/WHATS_NEW.md)** - Latest updates & changes
-- **[FIXES_AND_IMPROVEMENTS.md](docs/FIXES_AND_IMPROVEMENTS.md)** - What's been fixed
-- **[CI_FIXES_v2.md](docs/CI_FIXES_v2.md)** - CI/CD fixes documentation
-
-### 📖 Complete Index
-- **[DOCUMENTATION_INDEX.md](docs/DOCUMENTATION_INDEX.md)** - Complete documentation index
-- **[FINAL_SUMMARY.md](docs/FINAL_SUMMARY.md)** - Comprehensive project summary
-
----
-
-## ⚙️ Configuration
-
-### Trading Symbols
 Edit `src/config.js`:
 ```javascript
-symbols: ['BTC/USD', 'ETH/USD']  // Add or remove symbols
+symbol: 'ETH/USD',  // Change this
 ```
 
-### Check Interval
-```javascript
-checkInterval: 60000  // 60 seconds (change to 30000 for 30 sec)
+**Supported symbols:** BTC/USD, ETH/USD, LTC/USD, DOGE/USD, SOL/USD, AAPL, TSLA, etc.
+
+## Documentation
+
+### 📚 [Complete Documentation Index](docs/NAVIGATION.md)
+
+### 🎉 [What's New in v1.2.0](docs/WHATS_NEW.md)
+- Automatic dependency detection & installation
+- 5 new comprehensive guides
+- Complete cross-linking between all docs
+- 10+ external libraries documented
+
+### For Beginners
+- **[Getting Started Guide](docs/GETTING_STARTED.md)** - Complete setup instructions (start here!)
+- **[Strategy Explained](docs/STRATEGY_EXPLAINED.md)** - How the default strategy works
+- **[Indicators Guide](docs/INDICATORS_GUIDE.md)** - All 6 built-in indicators explained
+
+### For Intermediate Users
+- **[Strategy Guide](docs/STRATEGY_GUIDE.md)** - 5+ pre-built strategies to copy/paste
+- **[Custom Strategies](docs/CUSTOM_STRATEGIES.md)** - Build your own strategy
+- **[External Libraries](docs/EXTERNAL_LIBRARIES.md)** - Use 50+ advanced indicators
+
+### For Advanced Users
+- **[API Reference](docs/API_REFERENCE.md)** - Complete API documentation
+- **[Deployment Guide](docs/DEPLOYMENT.md)** - Production deployment (VPS, Docker, PM2)
+- **[Troubleshooting](docs/TROUBLESHOOTING.md)** - Common issues and solutions
+
+### Project Information
+- **[Directory Structure](docs/DIRECTORY_STRUCTURE.md)** - Project organization
+- **[Technical Summary](docs/SUMMARY.md)** - Technical details
+- **[Contributing](CONTRIBUTING.md)** - How to contribute
+- **[Security](SECURITY.md)** - Security best practices
+- **[Changelog](CHANGELOG.md)** - Version history
+
+## Project Structure
+
+```
+TradeRiser/
+├── src/              # Source code
+│   ├── index.js     # Main bot
+│   ├── broker.js    # Alpaca API
+│   ├── strategy.js  # Trading strategy (customize this!)
+│   ├── portfolio.js # Portfolio management
+│   └── config.js    # Configuration
+├── docs/            # Documentation
+├── .github/         # CI/CD workflows
+└── README.md        # This file
 ```
 
-### Position Size
-Edit `src/strategy.js`:
-```javascript
-this.positionSizePercent = 0.1;  // 10% of buying power per trade
-```
+## Available Indicators
 
----
+- Simple Moving Average (SMA)
+- Exponential Moving Average (EMA)
+- Relative Strength Index (RSI)
+- MACD
+- Bollinger Bands
+- ATR (Average True Range)
+- Volume Filter
 
-## 🧪 Testing & Commands
+## Commands
 
-### Essential Commands
 ```bash
-# Install dependencies
-npm install
-
-# Run the bot
-npm start
-
-# Run tests
-npm test
-
-# Check for security vulnerabilities
-npm audit
-
-# Fix security issues (if any)
-npm audit fix
+npm install    # Install dependencies
+npm test       # Run tests
+npm start      # Start the bot
+npm audit      # Security check
 ```
 
-### Development Commands
-```bash
-# Check code style (placeholder)
-npm run lint
+## Contributing
 
-# Format code (placeholder)
-npm run format
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
 
-# View project structure
-tree -L 2 -I node_modules  # Linux/Mac
-# or
-dir /s /b | findstr /v node_modules  # Windows
-```
+## Security
 
-### File Locations
-```bash
-# Edit strategy
-code src/strategy.js
-# or
-nano src/strategy.js
+See [SECURITY.md](SECURITY.md) for security policy and reporting vulnerabilities.
 
-# Edit configuration
-code src/config.js
+## Changelog
 
-# View documentation
-cd docs/
-ls  # or dir on Windows
+See [CHANGELOG.md](CHANGELOG.md) for version history.
 
-# View logs (if bot is running)
-# Console output shows all activity
-```
+## License
 
----
+MIT License - see [LICENSE](LICENSE) file for details.
 
-## 🛡️ Security
+## Disclaimer
 
-- ✅ Paper trading by default
-- ✅ API keys in `.env` (not committed)
-- ✅ Comprehensive error handling
-- ✅ One position at a time
-- ✅ Built-in TP/SL protection
+This software is for educational purposes only. Cryptocurrency trading carries significant risk. Only trade with money you can afford to lose. Always start with paper trading. The authors are not responsible for any financial losses.
 
-See [SECURITY.md](SECURITY.md) for more details.
+## Support
 
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) first.
-
-### Quick Contribution Guide:
-1. Fork the repo
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## ⚠️ Disclaimer
-
-**This software is for educational purposes only.**
-
-- Cryptocurrency trading carries significant risk
-- Past performance does not guarantee future results
-- Only trade with money you can afford to lose
-- Always start with paper trading
-- The authors are not responsible for any financial losses
-
----
-
-## 🎯 Roadmap
-
-- [ ] Add more strategy templates
-- [ ] Implement backtesting
-- [ ] Add web dashboard
-- [ ] Support more exchanges
-- [ ] Add machine learning strategies
-- [ ] Implement portfolio rebalancing
-
----
-
-## 🔧 Troubleshooting
-
-### Common Issues
-
-#### "Cannot find module" error
-```bash
-# Make sure you're in the project root
-cd TradeRiser
-
-# Reinstall dependencies
-rm -rf node_modules package-lock.json
-npm install
-```
-
-#### "API key not found" error
-```bash
-# Check your .env file exists in project root
-ls -la .env  # Linux/Mac
-dir .env     # Windows
-
-# Make sure it has your keys
-cat .env     # Linux/Mac
-type .env    # Windows
-```
-
-#### Bot keeps buying multiple times
-This has been fixed! Make sure you have the latest version:
-```bash
-git pull origin main
-npm install
-```
-
-#### Tests failing
-```bash
-# Check Node version (needs 16+)
-node --version
-
-# Update dependencies
-npm install
-
-# Check .env file
-cat .env
-```
-
-### Getting Help
-
-- 📖 Read the [documentation](docs/)
-- 🐛 Report bugs via [GitHub Issues](https://github.com/MeridianAlgo/TradeRiser/issues)
-- 💡 Request features via [GitHub Issues](https://github.com/MeridianAlgo/TradeRiser/issues)
-- 🤝 Contribute via [Pull Requests](https://github.com/MeridianAlgo/TradeRiser/pulls)
-- 📧 Security issues: See [SECURITY.md](SECURITY.md)
-
----
-
-## 🌟 Star History
-
-If you find this project useful, please consider giving it a star! ⭐
-
----
-
-## 📊 Stats
-
-![GitHub stars](https://img.shields.io/github/stars/MeridianAlgo/TradeRiser?style=social)
-![GitHub forks](https://img.shields.io/github/forks/MeridianAlgo/TradeRiser?style=social)
-![GitHub issues](https://img.shields.io/github/issues/MeridianAlgo/TradeRiser)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/MeridianAlgo/TradeRiser)
-
----
-
-**Happy Trading! 🚀**
-
-Made with ❤️ by MeridianAlgo for the community
+- **[Documentation Index](docs/NAVIGATION.md)** - All documentation
+- **[Troubleshooting Guide](docs/TROUBLESHOOTING.md)** - Common issues
+- **[GitHub Issues](https://github.com/yourusername/TradeRiser/issues)** - Ask questions
+- **[GitHub Discussions](https://github.com/yourusername/TradeRiser/discussions)** - Community help
+- **[Security Policy](SECURITY.md)** - Report vulnerabilities

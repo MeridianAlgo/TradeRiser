@@ -1,220 +1,161 @@
-# 🤖 Crypto Trading Bot - Alpaca Paper Trading
+# TradeRiser Documentation
 
-A **modular** cryptocurrency trading bot that's easy to customize - even for non-coders!
+Welcome to the TradeRiser documentation!
 
-✅ Uses **REAL LIVE PRICES** from Alpaca  
-✅ **Paper trading** by default (safe testing)  
-✅ **Comprehensive error handling**  
-✅ **Easy strategy customization** - just edit one file!
+## 🎉 What's New
 
----
-
-## 🚀 Quick Start (5 Minutes!)
-
-### Step 1: Install
-```bash
-npm install
-```
-
-### Step 2: Get API Keys
-1. Go to https://alpaca.markets
-2. Sign up for a FREE paper trading account
-3. Get your API Key and Secret
-
-### Step 3: Configure
-1. Open the `.env` file
-2. Add your API credentials:
-```
-ALPACA_API_KEY=your_key_here
-ALPACA_API_SECRET=your_secret_here
-ALPACA_PAPER=true
-```
-
-### Step 4: Test
-```bash
-npm test
-```
-
-### Step 5: Run!
-```bash
-npm start
-```
-
-That's it! Your bot is now running! 🎉
+**[What's New in v1.2.0](WHATS_NEW.md)** - Latest features and improvements
 
 ---
 
-## 🎯 How to Create Your Strategy (Super Easy!)
+## 📚 Documentation Index
 
-### For Non-Coders: Copy & Paste Method
-
-1. Open `strategy.js`
-2. Find the `analyze()` function (around line 60)
-3. **Copy one of the ready-made strategies** from `STRATEGY_GUIDE.md`
-4. **Paste it** to replace the existing code
-5. **Change the numbers** to your preference
-6. Save and run!
-
-### Example: Simple Buy Low, Sell High
-
-```javascript
-async analyze(data) {
-  const { symbol, currentPrice, position } = data;
-  
-  const BUY_PRICE = 65000;   // ← Change this number
-  const SELL_PRICE = 70000;  // ← Change this number
-  
-  if (currentPrice < BUY_PRICE && !position) {
-    return 'BUY';
-  }
-  
-  if (currentPrice > SELL_PRICE && position) {
-    return 'SELL';
-  }
-  
-  return 'HOLD';
-}
-```
-
-**That's it!** Just change the numbers and you have a custom strategy!
+**[NAVIGATION.md](NAVIGATION.md)** - Complete documentation hub with all guides organized by topic and user level
 
 ---
 
-## 📚 Documentation
+## Quick Start
 
-- **`STRATEGY_GUIDE.md`** - Complete guide with 5+ ready-to-use strategies
-- **`SUMMARY.md`** - Technical details and test results
-- **`strategy.js`** - Your strategy file (heavily commented!)
+### New Users
+1. **[Getting Started](GETTING_STARTED.md)** - Complete setup guide
+2. **[Strategy Explained](STRATEGY_EXPLAINED.md)** - Understand the default strategy
+3. **[Strategy Guide](STRATEGY_GUIDE.md)** - Try pre-built strategies
 
----
+### Intermediate Users
+1. **[Indicators Guide](INDICATORS_GUIDE.md)** - Learn about all indicators
+2. **[Custom Strategies](CUSTOM_STRATEGIES.md)** - Build your own strategy
+3. **[External Libraries](EXTERNAL_LIBRARIES.md)** - Use advanced libraries
 
-## 📁 Project Structure
-
-```
-├── strategy.js       ← YOUR STRATEGY (edit this!)
-├── index.js          ← Main bot (don't need to touch)
-├── broker.js         ← Alpaca API (don't need to touch)
-├── portfolio.js      ← Portfolio management (don't need to touch)
-├── config.js         ← Settings (symbols, interval)
-└── .env              ← Your API keys
-```
-
-**You only need to edit `strategy.js`!**
+### Advanced Users
+1. **[API Reference](API_REFERENCE.md)** - Complete API documentation
+2. **[Dependency Management](DEPENDENCY_MANAGEMENT.md)** - Auto-install packages
+3. **[Deployment](DEPLOYMENT.md)** - Deploy to production
 
 ---
 
-## 🎓 Ready-Made Strategies
+## All Documentation Files
 
-Choose from 5+ strategies in `STRATEGY_GUIDE.md`:
+### Getting Started
+- **[Getting Started](GETTING_STARTED.md)** - Complete beginner's guide
+- **[Strategy Explained](STRATEGY_EXPLAINED.md)** - How the default strategy works
+- **[Quick Start](../README.md)** - Main README
 
-1. **Simple Price Threshold** - Buy at $X, sell at $Y
-2. **RSI Overbought/Oversold** - Buy low RSI, sell high RSI
-3. **Take Profit / Stop Loss** - Automatic profit taking
-4. **Buy the Dip** - Buy when price drops X%
-5. **Trend Following** - Follow the trend with EMAs
+### Strategies
+- **[Strategy Guide](STRATEGY_GUIDE.md)** - 5+ pre-built strategies
+- **[Custom Strategies](CUSTOM_STRATEGIES.md)** - Build your own
+- **[Indicators Guide](INDICATORS_GUIDE.md)** - All available indicators
 
-All strategies are **copy-paste ready** with clear instructions!
+### Advanced Topics
+- **[External Libraries](EXTERNAL_LIBRARIES.md)** - 10+ libraries with examples
+- **[API Reference](API_REFERENCE.md)** - Complete API docs
+- **[Dependency Management](DEPENDENCY_MANAGEMENT.md)** - Auto-install guide
 
----
+### Deployment & Operations
+- **[Deployment](DEPLOYMENT.md)** - Production deployment
+- **[Troubleshooting](TROUBLESHOOTING.md)** - Common issues & solutions
 
-## ⚙️ Configuration
-
-### Change Trading Symbols
-Edit `config.js`:
-```javascript
-symbols: ['BTC/USD', 'ETH/USD']  // Add or remove symbols
-```
-
-### Change Check Interval
-```javascript
-checkInterval: 60000  // 60 seconds (change to 30000 for 30 sec)
-```
-
-### Change Position Size
-Edit `strategy.js`:
-```javascript
-this.positionSizePercent = 0.1;  // 10% of buying power per trade
-```
+### Project Information
+- **[Directory Structure](DIRECTORY_STRUCTURE.md)** - Project organization
+- **[Summary](SUMMARY.md)** - Technical overview
+- **[What's New](WHATS_NEW.md)** - Latest updates
+- **[CI Fixes](CI_FIXES_v2.md)** - CI/CD documentation
 
 ---
 
-## 📊 What You'll See
+## By Topic
 
-When running, the bot shows:
+### 📈 Trading Strategies
+- [Getting Started](GETTING_STARTED.md)
+- [Strategy Guide](STRATEGY_GUIDE.md)
+- [Strategy Explained](STRATEGY_EXPLAINED.md)
+- [Custom Strategies](CUSTOM_STRATEGIES.md)
 
-```
-⏰ 10/17/2025, 10:01:30 PM - Checking markets...
-   BTC/USD - Price: $106,648.29 | Short SMA: $106,609.71 | Long SMA: $106,731.74
-   ETH/USD - Price: $3,852.30 | Short SMA: $3,852.39 | Long SMA: $3,859.22
-```
+### 📊 Technical Indicators
+- [Indicators Guide](INDICATORS_GUIDE.md)
+- [External Libraries](EXTERNAL_LIBRARIES.md)
+- [API Reference](API_REFERENCE.md)
 
-When it trades:
-```
-   🔔 BUY signal detected for BTC/USD
-   ✅ BUY order placed: 0.01 BTC/USD at market
-```
+### ⚙️ Setup & Configuration
+- [Getting Started](GETTING_STARTED.md)
+- [Dependency Management](DEPENDENCY_MANAGEMENT.md)
+- [Deployment](DEPLOYMENT.md)
 
----
+### 🔧 Development
+- [Custom Strategies](CUSTOM_STRATEGIES.md)
+- [API Reference](API_REFERENCE.md)
+- [External Libraries](EXTERNAL_LIBRARIES.md)
+- [Dependency Management](DEPENDENCY_MANAGEMENT.md)
 
-## 🛡️ Safety Features
-
-✅ **Paper trading by default** - No real money at risk  
-✅ **Comprehensive error handling** - Won't crash on API errors  
-✅ **Position checks** - Won't double-buy or sell without position  
-✅ **Data validation** - Checks for valid prices and data  
-✅ **Auto-retry** - Recovers from temporary failures  
-
----
-
-## ⚠️ Important Reminders
-
-- 📝 This is for **educational purposes**
-- 🧪 Always **test thoroughly** with paper trading
-- 💰 **Never risk** more than you can afford to lose
-- 📈 **Past performance** doesn't guarantee future results
-- 🔒 **Never share** your API keys
+### 🆘 Help & Support
+- [Troubleshooting](TROUBLESHOOTING.md)
+- [Navigation](NAVIGATION.md)
+- [GitHub Issues](https://github.com/yourusername/TradeRiser/issues)
 
 ---
 
-## 🆘 Troubleshooting
+## Quick Links
 
-### Bot won't start?
-- Check your `.env` file has correct API keys
-- Run `npm test` to diagnose issues
-
-### No trades happening?
-- Your strategy conditions might not be met
-- Check the console output for indicator values
-- Try a simpler strategy first
-
-### Getting errors?
-- Make sure you have internet connection
-- Verify your Alpaca account is active
-- Check you're using paper trading credentials
+| I want to... | Go to... |
+|--------------|----------|
+| Set up the bot | [Getting Started](GETTING_STARTED.md) |
+| Try different strategies | [Strategy Guide](STRATEGY_GUIDE.md) |
+| Build my own strategy | [Custom Strategies](CUSTOM_STRATEGIES.md) |
+| Use external libraries | [External Libraries](EXTERNAL_LIBRARIES.md) |
+| Install dependencies | [Dependency Management](DEPENDENCY_MANAGEMENT.md) |
+| See all methods | [API Reference](API_REFERENCE.md) |
+| Deploy to production | [Deployment](DEPLOYMENT.md) |
+| Fix an error | [Troubleshooting](TROUBLESHOOTING.md) |
+| See what's new | [What's New](WHATS_NEW.md) |
 
 ---
 
-## 🚀 Next Steps
+## Documentation Features
 
-1. ✅ Get the bot running with default strategy
-2. 📖 Read `STRATEGY_GUIDE.md` for strategy ideas
-3. 🎯 Pick a strategy and customize it
-4. 🧪 Test with paper trading
-5. 📊 Monitor and improve
-6. 🎓 Learn and iterate!
+### ✅ Comprehensive Coverage
+- 15+ documentation files
+- Beginner to advanced topics
+- Complete API reference
+- 20+ troubleshooting solutions
+
+### ✅ Easy Navigation
+- Quick links in every guide
+- Cross-references between docs
+- Central navigation hub
+- Topic-based organization
+
+### ✅ Practical Examples
+- 5+ pre-built strategies
+- 10+ external libraries documented
+- Complete code examples
+- Real-world use cases
+
+### ✅ Always Up-to-Date
+- Version-specific guides
+- What's New document
+- Changelog tracking
+- Regular updates
 
 ---
 
-## 💡 Pro Tips
+## Contributing to Documentation
 
-- Start with the **simplest strategy** first
-- **Monitor for a few days** before making changes
-- **Keep a trading journal** of what works
-- **Backtest** your ideas before implementing
-- **Join trading communities** to learn more
+Found an error? Want to improve the docs?
+
+1. Fork the repository
+2. Edit the documentation
+3. Submit a pull request
+
+See **[CONTRIBUTING.md](../CONTRIBUTING.md)** for details.
 
 ---
 
-**Happy Trading! 🎉**
+## Need Help?
 
-Questions? Check `STRATEGY_GUIDE.md` for detailed help!
+1. **Check the docs** - Most questions are answered here
+2. **[Troubleshooting Guide](TROUBLESHOOTING.md)** - Common issues
+3. **[GitHub Issues](https://github.com/yourusername/TradeRiser/issues)** - Ask questions
+4. **[Discussions](https://github.com/yourusername/TradeRiser/discussions)** - Community help
+
+---
+
+[Back to Main README](../README.md) | [Browse All Docs](NAVIGATION.md)

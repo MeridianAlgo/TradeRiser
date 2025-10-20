@@ -1,209 +1,474 @@
-# 🎉 What's New - Updated Strategy!
+# 🎉 What's New in TradeRiser v1.2.0
 
-## ✨ Major Update: Take Profit & Stop Loss Added!
-
-Your trading bot now has **professional risk management** built-in!
+## Major Update: Automatic Dependency Management & Enhanced Documentation
 
 ---
 
-## 🎯 New Strategy: MA Crossover + TP/SL
+## 🚀 New Features
 
-### Before (Old Strategy):
-- ❌ Buy on MA crossover
-- ❌ Sell on MA crossover
-- ❌ No risk management
-- ❌ Could hold losing positions for a long time
+### 1. Automatic Dependency Detection
 
-### Now (New Strategy):
-- ✅ **Buy:** When Short MA crosses above Long MA (trend following)
-- ✅ **Sell:** When Take Profit (3%) OR Stop Loss (1.5%) is hit
-- ✅ **Risk Management:** Every trade has automatic TP and SL
-- ✅ **Profit Protection:** Locks in gains at 3%
-- ✅ **Loss Protection:** Cuts losses at 1.5%
+The bot now automatically detects when you use external libraries and tells you exactly what to install!
+
+**Before (v1.1.1):**
+```bash
+npm start
+# Error: Cannot find module 'technicalindicators'
+# (You had to figure out what to install)
+```
+
+**Now (v1.2.0):**
+```bash
+npm start
+# 🔍 Checking strategy dependencies...
+# 
+# ⚠️  Missing dependencies:
+#    - technicalindicators
+# 
+# 💡 To install: npm install technicalindicators
+# Or use: npm run install-deps -- --auto
+```
+
+**How it works:**
+1. Add any import to your strategy.js
+2. Run the bot
+3. Bot tells you exactly what to install
+4. Install with one command
+5. Done!
 
 ---
 
-## 🚀 What This Means for You
+### 2. Auto-Install Script
 
-### Better Risk Management
-Every trade now has:
-- **Take Profit:** Automatically sells when you're up 3%
-- **Stop Loss:** Automatically sells when you're down 1.5%
+Install all missing dependencies with one command:
 
-### More Predictable Results
-- You know your max loss per trade: 1.5%
-- You know your profit target: 3%
-- No more holding losing positions hoping they recover
-
-### Professional Trading
-This is how professional traders manage risk:
-1. Enter on a signal (MA crossover)
-2. Set TP and SL immediately
-3. Let the trade play out
-4. Move on to the next trade
-
----
-
-## 📊 Example Trade
-
-**Before (Old Strategy):**
-```
-1. Buy BTC at $100,000 (MA crossover)
-2. Price drops to $95,000 (-5%)
-3. Still holding... waiting for MA to cross back
-4. Price drops to $90,000 (-10%)
-5. Still holding... 😰
-6. Finally MA crosses, sell at $90,000
-7. Result: -10% loss
+```bash
+npm run install-deps -- --auto
 ```
 
-**Now (New Strategy):**
-```
-1. Buy BTC at $100,000 (MA crossover)
-2. TP set at $103,000 (+3%)
-3. SL set at $98,500 (-1.5%)
-4. Price drops to $98,500
-5. SL triggers → Auto-sell
-6. Result: -1.5% loss (protected!)
+**What it does:**
+- Scans your strategy.js for imports
+- Detects missing packages
+- Installs them automatically
+- Shows clear success/error messages
+
+**Example:**
+```bash
+$ npm run install-deps -- --auto
+
+🔍 Scanning strategy.js for dependencies...
+
+📦 External dependencies detected:
+   - technicalindicators
+   - axios
+
+⚠️  Missing dependencies:
+   - axios
+
+🚀 Auto-installing missing dependencies...
+
+✅ All dependencies installed successfully!
 ```
 
 ---
 
-## ⚙️ Easy to Customize
+### 3. Enhanced Dependency Checker
 
-Open `strategy.js` and change these numbers:
+Check dependencies without running the bot:
 
-```javascript
-// Lines 35-36
-this.takeProfitPercent = 3.0;   // Change to 5.0 for 5% profit
-this.stopLossPercent = 1.5;     // Change to 2.0 for 2% stop loss
+```bash
+npm run check-deps
 ```
 
-**That's it!** Just change the numbers and save.
+**Features:**
+- Detects ES6 imports and require()
+- Handles scoped packages (@org/package)
+- Shows clear status messages
+- Suggests installation commands
 
 ---
 
 ## 📚 New Documentation
 
-We've added a complete guide:
+### 1. Navigation Hub
 
-### **STRATEGY_EXPLAINED.md** ⭐ NEW!
-- How the strategy works (simple explanation)
-- Example trade flows
-- Customization examples
-- Tips for success
-- Quick modifications
+**[NAVIGATION.md](NAVIGATION.md)** - Central hub for all documentation
 
-**Read this first** to understand your new strategy!
+- Quick links to all guides
+- Organized by user level
+- Topic-based navigation
+- "I want to..." quick reference table
 
 ---
 
-## 🎮 How to Use
+### 2. External Libraries Guide
 
-### 1. Test It
+**[EXTERNAL_LIBRARIES.md](EXTERNAL_LIBRARIES.md)** - Comprehensive guide to 10+ popular libraries
+
+**Includes:**
+- Technical analysis libraries (technicalindicators, tulind, ta-lib)
+- Machine learning libraries (TensorFlow.js, brain.js)
+- Data processing libraries (lodash, mathjs, simple-statistics)
+- External data sources (axios, WebSocket)
+- Complete code examples for each
+- Best practices and performance tips
+- Library comparison table
+
+**Example topics:**
+- How to use technicalindicators for 50+ indicators
+- Building ML strategies with TensorFlow.js
+- Fetching external data with axios
+- Real-time data with WebSockets
+- Complete multi-library strategy example
+
+---
+
+### 3. API Reference
+
+**[API_REFERENCE.md](API_REFERENCE.md)** - Complete API documentation
+
+**Includes:**
+- All Strategy class methods
+- Built-in helper functions
+- Data structure definitions
+- TypeScript-style type definitions
+- Configuration options
+- Complete code examples
+- Error handling guide
+
+**Documented methods:**
+- `analyze(data)` - Main strategy method
+- `calculateSMA()`, `calculateEMA()` - Moving averages
+- `calculateRSI()` - RSI indicator
+- `calculateMACD()` - MACD indicator
+- `calculateBollingerBands()` - Bollinger Bands
+- `calculateATR()` - Average True Range
+- And more!
+
+---
+
+### 4. Troubleshooting Guide
+
+**[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** - Comprehensive troubleshooting
+
+**Covers:**
+- Installation issues
+- API & authentication errors
+- Strategy not working
+- Dependency problems
+- Performance issues
+- Runtime errors
+- Common mistakes
+- Quick fixes checklist
+
+**Example solutions:**
+- "npm: command not found" → Install Node.js
+- "Authentication failed" → Check API keys
+- "Bot keeps saying HOLD" → Adjust strategy
+- "Cannot find module" → Install package
+- And 20+ more issues!
+
+---
+
+### 5. Dependency Management Guide
+
+**[DEPENDENCY_MANAGEMENT.md](DEPENDENCY_MANAGEMENT.md)** - Complete dependency guide
+
+**Covers:**
+- How auto-detection works
+- All available commands
+- Supported import styles
+- Common workflows
+- Troubleshooting
+- Best practices
+- Quick install commands
+
+---
+
+## 🔗 Enhanced Cross-Linking
+
+All documentation now has comprehensive cross-links:
+
+### Quick Links Section
+
+Every guide now starts with:
+```markdown
+## Quick Links
+- [Main README](../README.md)
+- [Getting Started](GETTING_STARTED.md)
+- [Strategy Guide](STRATEGY_GUIDE.md)
+- [Custom Strategies](CUSTOM_STRATEGIES.md)
+- [Navigation](NAVIGATION.md)
+```
+
+### Related Documentation
+
+Every guide ends with:
+```markdown
+## Related Documentation
+- [Custom Strategies](CUSTOM_STRATEGIES.md)
+- [External Libraries](EXTERNAL_LIBRARIES.md)
+- [API Reference](API_REFERENCE.md)
+
+[Back to Navigation](NAVIGATION.md) | [Main README](../README.md)
+```
+
+### In-Text Links
+
+Guides now link to related content:
+- "Check out the **[External Libraries Guide](EXTERNAL_LIBRARIES.md)**"
+- "See **[Troubleshooting](TROUBLESHOOTING.md)** for solutions"
+- "Learn more in **[API Reference](API_REFERENCE.md)**"
+
+---
+
+## 📖 Improved Existing Documentation
+
+### Getting Started Guide
+
+**Enhanced with:**
+- Quick links at the top
+- Links to all related guides
+- Link to troubleshooting for common issues
+- "Next Steps" section with links
+- Better navigation
+
+### Custom Strategies Guide
+
+**Enhanced with:**
+- Auto-install instructions
+- Link to External Libraries guide
+- Link to Dependency Management guide
+- Better examples
+- More cross-references
+
+### Indicators Guide
+
+**Enhanced with:**
+- Link to External Libraries for more indicators
+- "Next Steps" section
+- Better navigation
+- Cross-references to related guides
+
+### README.md
+
+**Reorganized with:**
+- Documentation organized by user level
+  - For Beginners
+  - For Intermediate Users
+  - For Advanced Users
+- Comprehensive feature list
+- Highlighted automatic dependency management
+- Links to all new documentation
+
+---
+
+## 🛠️ Technical Improvements
+
+### Enhanced Scripts
+
+**check-dependencies.js:**
+- Better error messages with emojis
+- Detects ES6 imports and require()
+- Handles scoped packages
+- Shows installation suggestions
+- Suggests auto-install option
+
+**install-strategy-deps.js (NEW):**
+- Automatically scans strategy.js
+- Detects missing packages
+- Installs them automatically
+- Clear success/error messages
+- Supports --auto flag
+
+### package.json Updates
+
+**New scripts:**
+```json
+{
+  "scripts": {
+    "check-deps": "node scripts/check-dependencies.js",
+    "install-deps": "node scripts/install-strategy-deps.js",
+    "prestart": "node scripts/check-dependencies.js"
+  }
+}
+```
+
+**Prestart hook:**
+- Automatically checks dependencies before running
+- Prevents "Cannot find module" errors
+- Shows clear error messages
+
+---
+
+## 📊 Documentation Statistics
+
+### Before v1.2.0
+- 10 documentation files
+- Basic cross-linking
+- No dependency management guide
+- No API reference
+- No troubleshooting guide
+
+### After v1.2.0
+- **15 documentation files** (+5 new)
+- **Comprehensive cross-linking** (every doc links to related docs)
+- **Complete dependency management** (auto-detection + auto-install)
+- **Full API reference** (all methods documented)
+- **Comprehensive troubleshooting** (20+ issues covered)
+- **Navigation hub** (central documentation index)
+
+---
+
+## 🎯 What This Means for You
+
+### For Beginners
+
+**Before:**
+- Had to figure out what packages to install
+- Got confusing error messages
+- Hard to find related documentation
+
+**Now:**
+- Bot tells you exactly what to install
+- Clear error messages with solutions
+- Easy navigation between guides
+- Quick links to related topics
+
+---
+
+### For Intermediate Users
+
+**Before:**
+- Manual dependency management
+- Limited library documentation
+- Had to search for examples
+
+**Now:**
+- Automatic dependency detection
+- 10+ libraries documented with examples
+- Complete API reference
+- Easy to find what you need
+
+---
+
+### For Advanced Users
+
+**Before:**
+- No comprehensive API docs
+- Limited troubleshooting guide
+- Basic library examples
+
+**Now:**
+- Complete API reference
+- Comprehensive troubleshooting
+- Advanced library examples
+- Multi-library strategy examples
+- Performance optimization tips
+
+---
+
+## 🚀 Getting Started with v1.2.0
+
+### If You're New
+
+1. Read **[Getting Started](GETTING_STARTED.md)**
+2. Try the default strategy
+3. Explore **[Strategy Guide](STRATEGY_GUIDE.md)**
+4. Check out **[Indicators Guide](INDICATORS_GUIDE.md)**
+
+### If You Want to Use External Libraries
+
+1. Read **[External Libraries Guide](EXTERNAL_LIBRARIES.md)**
+2. Pick a library
+3. Add import to strategy.js
+4. Run `npm run install-deps -- --auto`
+5. Done!
+
+### If You're Building Custom Strategies
+
+1. Read **[Custom Strategies](CUSTOM_STRATEGIES.md)**
+2. Check **[API Reference](API_REFERENCE.md)**
+3. Use **[External Libraries](EXTERNAL_LIBRARIES.md)** for advanced features
+4. Reference **[Troubleshooting](TROUBLESHOOTING.md)** if issues arise
+
+### If You Need Help
+
+1. Check **[Troubleshooting Guide](TROUBLESHOOTING.md)**
+2. Browse **[Navigation](NAVIGATION.md)** for all docs
+3. Search for your issue
+4. Ask on GitHub Issues
+
+---
+
+## 📝 Upgrade Guide
+
+### From v1.1.1 to v1.2.0
+
+**No breaking changes!** Just pull the latest code:
+
 ```bash
-npm test
+cd TradeRiser
+git pull origin main
+npm install
 ```
 
-You'll see output like:
-```
-🔔 BUY SIGNAL: MA Crossover detected! 📈
-🎯 Will exit at TP: +3% OR SL: -1.5%
-```
-
-### 2. Run It
+**New features available immediately:**
 ```bash
-npm start
+npm run check-deps        # Check dependencies
+npm run install-deps -- --auto  # Auto-install
 ```
 
-Watch it trade with TP/SL protection!
-
-### 3. Customize It
-Open `strategy.js` and change the numbers on lines 35-36.
+**New documentation:**
+- Browse **[NAVIGATION.md](NAVIGATION.md)** for all docs
+- Check **[EXTERNAL_LIBRARIES.md](EXTERNAL_LIBRARIES.md)** for library examples
+- Reference **[API_REFERENCE.md](API_REFERENCE.md)** for API docs
 
 ---
 
-## 💡 What You'll See
+## 🎉 Summary
 
-### When Buying:
-```
-🔔 BUY SIGNAL: MA Crossover detected! 📈
-📊 Short MA ($106,812.34) > Long MA ($106,706.04)
-🎯 Will exit at TP: +3% OR SL: -1.5%
-✅ BUY order placed: 0.11 BTC/USD at market
-```
+TradeRiser v1.2.0 is a major documentation and usability update:
 
-### When Holding:
-```
-BTC/USD - Entry: $106,700 | Current: $107,200 | P/L: +0.47%
-📊 TP Target: +3% | SL Target: -1.5%
-⏳ Holding position (waiting for TP or SL to trigger)
-```
+### Key Improvements
+- ✅ **Automatic dependency detection** - No more "Cannot find module" confusion
+- ✅ **Auto-install script** - One command to install everything
+- ✅ **5 new comprehensive guides** - 15 total documentation files
+- ✅ **Complete cross-linking** - Easy navigation between guides
+- ✅ **10+ libraries documented** - With complete examples
+- ✅ **Full API reference** - All methods documented
+- ✅ **Comprehensive troubleshooting** - 20+ issues covered
 
-### When Take Profit Hits:
-```
-🎯 SELL: Take Profit hit at +3.02% gain! 💰
-✅ SELL order placed: 0.11 BTC/USD at market
-```
-
-### When Stop Loss Hits:
-```
-🛑 SELL: Stop Loss hit at -1.48% loss!
-✅ SELL order placed: 0.11 BTC/USD at market
-```
+### What's Next?
+- Continue building your strategies
+- Explore external libraries
+- Share your strategies with the community
+- Contribute to the project!
 
 ---
 
-## 🎯 Quick Settings Guide
+## 📚 All New Documentation
 
-### Conservative (Safer):
-```javascript
-this.takeProfitPercent = 5.0;   // Wait for bigger gains
-this.stopLossPercent = 2.5;     // Allow more volatility
-```
-
-### Balanced (Default):
-```javascript
-this.takeProfitPercent = 3.0;   // Good balance
-this.stopLossPercent = 1.5;     // Reasonable protection
-```
-
-### Aggressive (More Trades):
-```javascript
-this.takeProfitPercent = 2.0;   // Exit sooner
-this.stopLossPercent = 1.0;     // Tight stop loss
-```
+1. **[NAVIGATION.md](NAVIGATION.md)** - Documentation hub
+2. **[EXTERNAL_LIBRARIES.md](EXTERNAL_LIBRARIES.md)** - Library guide
+3. **[API_REFERENCE.md](API_REFERENCE.md)** - API documentation
+4. **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** - Troubleshooting guide
+5. **[DEPENDENCY_MANAGEMENT.md](DEPENDENCY_MANAGEMENT.md)** - Dependency guide
 
 ---
 
-## ✅ Everything Still Works
+## 🤝 Contributing
 
-All your existing features are still there:
-- ✅ Real live prices from Alpaca
-- ✅ Comprehensive error handling
-- ✅ Paper trading by default
-- ✅ Easy to customize
-- ✅ Complete documentation
+Love the new features? Consider contributing:
+- Share your custom strategies
+- Report bugs or issues
+- Suggest new features
+- Improve documentation
 
-**Plus** now you have professional risk management!
-
----
-
-## 📖 Learn More
-
-Read these guides:
-1. **STRATEGY_EXPLAINED.md** - Understand the new strategy
-2. **STRATEGY_GUIDE.md** - Other strategy options
-3. **GETTING_STARTED.md** - Setup and basics
+See **[CONTRIBUTING.md](../CONTRIBUTING.md)** for details.
 
 ---
-
-## 🎉 Ready to Go!
-
-Your bot is now more professional and safer than before!
-
-**Test it:** `npm test`  
-**Run it:** `npm start`  
-**Customize it:** Edit `strategy.js` lines 35-36
 
 **Happy Trading! 🚀**
+
+[Back to Navigation](NAVIGATION.md) | [Main README](../README.md) | [Changelog](../CHANGELOG.md)

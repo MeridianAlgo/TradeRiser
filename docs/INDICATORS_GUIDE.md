@@ -1,8 +1,21 @@
 # 📊 Complete Indicators & Limitations Guide
 
+## Quick Links
+- [Main README](../README.md)
+- [Getting Started](GETTING_STARTED.md) - Setup guide
+- [Strategy Guide](STRATEGY_GUIDE.md) - Pre-built strategies
+- [Custom Strategies](CUSTOM_STRATEGIES.md) - Build your own
+- [External Libraries](EXTERNAL_LIBRARIES.md) - Advanced indicators
+- [API Reference](API_REFERENCE.md) - Method documentation
+- [All Documentation](NAVIGATION.md)
+
+---
+
 ## 🎯 Available Indicators in Your Bot
 
 Your bot comes with **6 powerful technical indicators** built-in and ready to use!
+
+**Want more indicators?** Check out the **[External Libraries Guide](EXTERNAL_LIBRARIES.md)** for 50+ additional indicators!
 
 ---
 
@@ -358,3 +371,17 @@ You now have:
 - ✅ Quick enable guide
 
 **Start simple, test thoroughly, and gradually add complexity!** 🚀
+
+---
+
+## Next Steps
+
+- **[Try Pre-built Strategies](STRATEGY_GUIDE.md)** - 5+ ready-to-use strategies
+- **[Build Custom Strategy](CUSTOM_STRATEGIES.md)** - Create your own
+- **[Use External Libraries](EXTERNAL_LIBRARIES.md)** - 50+ more indicators
+- **[API Reference](API_REFERENCE.md)** - Complete method documentation
+- **[Troubleshooting](TROUBLESHOOTING.md)** - Fix issues
+
+---
+
+[Back to Navigation](NAVIGATION.md) | [Main README](../README.md)

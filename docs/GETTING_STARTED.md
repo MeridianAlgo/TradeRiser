@@ -1,5 +1,15 @@
 # 🎯 Getting Started - Complete Beginner's Guide
 
+## Quick Links
+- [Main README](../README.md)
+- [Strategy Guide](STRATEGY_GUIDE.md) - Pre-built strategies
+- [Indicators Guide](INDICATORS_GUIDE.md) - Available indicators
+- [Custom Strategies](CUSTOM_STRATEGIES.md) - Build your own
+- [Troubleshooting](TROUBLESHOOTING.md) - Fix issues
+- [All Documentation](NAVIGATION.md)
+
+---
+
 ## 👋 Welcome!
 
 This guide assumes you know **NOTHING** about coding. We'll walk through everything step by step.
@@ -159,7 +169,7 @@ this.longWindow = 50;   // Very slow
 
 ### Option 2: Use a Different Strategy (Copy & Paste!)
 
-1. Open `STRATEGY_GUIDE.md`
+1. Open **[Strategy Guide](STRATEGY_GUIDE.md)**
 2. Find a strategy you like (there are 5+ examples)
 3. **Copy the entire code block**
 4. Open `strategy.js`
@@ -170,6 +180,8 @@ this.longWindow = 50;   // Very slow
 9. Restart the bot
 
 **That's it!** You just changed your entire trading strategy!
+
+**Want to build your own?** Check out the **[Custom Strategies Guide](CUSTOM_STRATEGIES.md)**
 
 ---
 
@@ -274,7 +286,7 @@ The bot tells you everything it's doing:
 **Problem:** Strategy conditions aren't being met  
 **Solution:**
 1. This is normal! The strategy is waiting for the right moment
-2. Try a simpler strategy (like "Simple Price Threshold")
+2. Try a simpler strategy from **[Strategy Guide](STRATEGY_GUIDE.md)**
 3. Adjust the numbers in your strategy
 
 ### "No bar data available"
@@ -284,6 +296,8 @@ The bot tells you everything it's doing:
 2. Check your internet connection
 3. Try a different symbol (BTC/USD is most reliable)
 
+**More issues?** Check the **[Troubleshooting Guide](TROUBLESHOOTING.md)**
+
 ---
 
 ## 📚 Learning Resources
@@ -291,9 +305,12 @@ The bot tells you everything it's doing:
 ### Want to Learn More?
 
 1. **Read the guides:**
-   - `STRATEGY_GUIDE.md` - 5+ ready-to-use strategies
-   - `README.md` - Quick reference
-   - `SUMMARY.md` - Technical details
+   - **[Strategy Guide](STRATEGY_GUIDE.md)** - 5+ ready-to-use strategies
+   - **[Indicators Guide](INDICATORS_GUIDE.md)** - All available indicators
+   - **[Custom Strategies](CUSTOM_STRATEGIES.md)** - Build your own
+   - **[External Libraries](EXTERNAL_LIBRARIES.md)** - Advanced indicators
+   - **[API Reference](API_REFERENCE.md)** - Complete code reference
+   - **[Main README](../README.md)** - Quick reference
 
 2. **Experiment:**
    - Try different strategies
@@ -339,3 +356,17 @@ Ctrl+C         # Stop the bot
 ```
 
 That's all you need to know! 🎉
+
+---
+
+## Next Steps
+
+- **[Try Different Strategies](STRATEGY_GUIDE.md)** - 5+ pre-built strategies
+- **[Learn About Indicators](INDICATORS_GUIDE.md)** - Understand the tools
+- **[Build Custom Strategy](CUSTOM_STRATEGIES.md)** - Create your own
+- **[Deploy to Production](DEPLOYMENT.md)** - Run 24/7
+- **[Browse All Docs](NAVIGATION.md)** - Complete documentation
+
+---
+
+[Back to Navigation](NAVIGATION.md) | [Main README](../README.md)
