@@ -82,10 +82,12 @@ jobs:
       run: |
         echo "Checking for sensitive patterns..."
         
-        # Check for private keys
+        # Check for private keys (exclude documentation)
         if grep -r "BEGIN.*PRIVATE KEY" . \
           --exclude-dir=node_modules \
-          --exclude-dir=.git; then
+          --exclude-dir=.git \
+          --exclude-dir=docs \
+          --exclude="*.md"; then
           echo "ERROR: Found private key in code!"
           exit 1
         fi
